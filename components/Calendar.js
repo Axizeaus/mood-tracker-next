@@ -1,6 +1,5 @@
 "use client";
 import { baseRating, gradients } from "@/utils";
-import { Fugaz_One } from "next/font/google";
 import React, { useState } from "react";
 
 const months = {
@@ -28,8 +27,6 @@ const dayList = [
   "Friday",
   "Saturday",
 ];
-
-const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
 
 export default function Calendar(props) {
   const { demo, completeData, handleSetMood } = props;
@@ -68,12 +65,7 @@ export default function Calendar(props) {
         >
           <i className="fa-solid fa-circle-chevron-left"></i>
         </button>
-        <p
-          className={
-            "text-center col-span-3 capitalized whitespace-nowrap textGradient " +
-            fugaz.className
-          }
-        >
+        <p className="text-center col-span-3 capitalized whitespace-nowrap textGradient font-fancy">
           {selectedMonth}, {selectedYear}
         </p>
         <button
@@ -114,7 +106,7 @@ export default function Calendar(props) {
                     key={dayOfWeekIndex}
                     style={{ background: color }}
                     className={
-                      "text-xs sm:text-sm border border-solid p-2 flex items-center gap-2 justify-between rounded-e-full " +
+                      "text-xs sm:text-sm border border-solid p-2 flex items-center gap-2 justify-between rounded-md " +
                       (isToday ? " border-indigo-400" : " border-indigo-100") +
                       (color === "white" ? " text-indigo-400" : " text-white")
                     }

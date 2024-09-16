@@ -1,5 +1,4 @@
 "use client";
-import { Fugaz_One } from "next/font/google";
 import React, { useEffect, useState } from "react";
 import Calendar from "./Calendar";
 import { useAuth } from "@/context/AuthContext";
@@ -7,8 +6,6 @@ import { doc, setDoc } from "firebase/firestore";
 import { db } from "@/firebase";
 import Loading from "./Loading";
 import Login from "./Login";
-
-const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
 
 export default function Dashboard() {
   const { currentUser, userDataObj, setUserDataObj, loading } = useAuth();
@@ -107,7 +104,7 @@ export default function Dashboard() {
               <p className="font-medium capitalize text-xs sm:text-sm truncate">
                 {status.replaceAll("_", " ")}
               </p>
-              <p className={"text-base sm:text-lg truncate " + fugaz.className}>
+              <p className="text-base sm:text-lg truncate font-fancy">
                 {statuses[status]}
                 {status === "num_days" ? " 🔥" : ""}
               </p>
@@ -115,11 +112,7 @@ export default function Dashboard() {
           );
         })}
       </div>
-      <h4
-        className={
-          "text-5xl sm:text-6xl md:text-7xl text-center " + fugaz.className
-        }
-      >
+      <h4 className="text-5xl sm:text-6xl md:text-7xl text-center font-fancy ">
         How do you <span className="textGradient">feel</span> today?
       </h4>
       <div className="flex items-stretch flex-wrap gap-4">
@@ -136,12 +129,7 @@ export default function Dashboard() {
               key={moodIndex}
             >
               <p className="text-4xl sm:text-5xl md:text-6xl">{moods[mood]}</p>
-              <p
-                className={
-                  "text-indigo-500 text-xs sm:text-sm md:text-base " +
-                  fugaz.className
-                }
-              >
+              <p className="text-indigo-500 text-xs sm:text-sm md:text-base font-fancy ">
                 {mood}
               </p>
             </button>

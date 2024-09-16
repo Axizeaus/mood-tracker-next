@@ -5,7 +5,7 @@ import Head from "./head";
 import Logout from "@/components/Logout";
 import { Fugaz_One, Questrial, Raleway } from "next/font/google";
 
-const default_font = Raleway({
+const default_font = Questrial({
   subsets: ["latin"],
   weight: ["400"],
   display: "swap",
