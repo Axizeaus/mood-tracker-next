@@ -1,8 +1,6 @@
 import { Fugaz_One } from "next/font/google";
 import React from "react";
 
-const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
-
 export default function Button(props) {
   const { text, dark, full, clickHandler } = props;
 
@@ -15,11 +13,7 @@ export default function Button(props) {
         (full ? " grid place-items-center w-full " : " ")
       }
     >
-      <p
-        className={
-          "px-6 sm:px-10 whitespace-nowrap py-2 sm:py-3 " + fugaz.className
-        }
-      >
+      <p className="px-6 sm:px-10 whitespace-nowrap py-2 sm:py-3 font-fancy">
         {text}
       </p>
     </button>
