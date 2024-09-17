@@ -60,7 +60,7 @@ export default function Calendar(props) {
       <div className="grid grid-cols-5 gap-4">
         <button
           onClick={() => handleIncrementMonth(-1)}
-          className="mr-auto text-indigo-400 text-lg sm:text-xl duration-200 hover:opacity-60"
+          className="mr-auto text-slate-800 text-lg sm:text-xl duration-200 hover:opacity-60"
           aria-label="Previous Month"
         >
           <i className="fa-solid fa-circle-chevron-left"></i>
@@ -70,7 +70,7 @@ export default function Calendar(props) {
         </p>
         <button
           onClick={() => handleIncrementMonth(1)}
-          className="ml-auto text-indigo-400 text-lg sm:text-xl duration-200 hover:opacity-60"
+          className="ml-auto text-slate-800 text-lg sm:text-xl duration-200 hover:opacity-60"
           aria-label="Next Month"
         >
           <i className="fa-solid fa-circle-chevron-right"></i>
@@ -92,7 +92,7 @@ export default function Calendar(props) {
                   selectedYear === now.getFullYear();
 
                 if (!dayDisplay) {
-                  return <div className="bg-purple-50" key={dayOfWeekIndex} />;
+                  return <div className=" " key={dayOfWeekIndex} />;
                 }
 
                 const color = demo
@@ -106,12 +106,17 @@ export default function Calendar(props) {
                     key={dayOfWeekIndex}
                     style={{ background: color }}
                     className={
-                      "text-xs sm:text-sm border border-solid p-2 flex items-center gap-2 justify-between rounded-md " +
-                      (isToday ? " border-indigo-400" : " border-indigo-100") +
-                      (color === "white" ? " text-indigo-400" : " text-white")
+                      "text-xs sm:text-sm border-2 border-y-green-500 p-2 flex items-center gap-2 justify-between rounded-r-full " +
+                      (isToday ? " border-dashed " : " border-solid")
+                      // +
+                      // (color === "white"
+                      //   ? " text-slate-800"
+                      //   : " text-slate-400")
                     }
                   >
-                    <p>{dayIndex}</p>
+                    <p className="bg-white pr-1 rounded-r-full text-slate-950">
+                      {dayIndex}
+                    </p>
                   </div>
                 );
               })}

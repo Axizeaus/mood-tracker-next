@@ -8,8 +8,10 @@ export default function Button(props) {
     <button
       onClick={clickHandler}
       className={
-        "rounded-full overflow-hidden duration-200 hover:opacity-60 border-2 border-solid border-indigo-600 " +
-        (dark ? " text-white bg-indigo-600 " : " text-indigo-600 ") +
+        "rounded-full overflow-hidden duration-200 hover:opacity-60 border border-solid border-x-[#0D47A1] border-y-[#FFC107] " +
+        (dark
+          ? " text-white bg-[#6A1B9A] "
+          : " textGradient from-[#FF8A80] to-[#4CAF50] ") +
         (full ? " grid place-items-center w-full " : " ")
       }
     >
